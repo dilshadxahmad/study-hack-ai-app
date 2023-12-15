@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.7
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +20,29 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/svg/
+
+  fonts:
+    - family: Poppins
+      fonts:
+      - asset: assets/fonts/PoppinsRegular.ttf
+      - asset: assets/fonts/PoppinsBold.ttf
+      - asset: assets/fonts/PoppinsBoldItalic.ttf
+      - asset: assets/fonts/PoppinsItalic.ttf
+      - asset: assets/fonts/PoppinsMedium.ttf
+      - asset: assets/fonts/PoppinsSemiBold.ttf
+    - family: Roboto
+      fonts:
+      - asset: assets/fonts/RobotoRegular.ttf
+      - asset: assets/fonts/RobotoBold.ttf
+
+flutter_native_splash:
+  android: true
+  ios: true
+
+  image: "assets/icons/splash_icon.png"
+  color: "#D9D9D9"
