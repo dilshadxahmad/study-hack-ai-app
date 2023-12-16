@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.7
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
@@ -17,6 +18,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icons/app_icon_fg.png"
 
 flutter:
   uses-material-design: true
@@ -45,4 +53,4 @@ flutter_native_splash:
   ios: true
 
   image: "assets/icons/splash_icon.png"
-  color: "#D9D9D9"
+  color: "#FFFFFF"

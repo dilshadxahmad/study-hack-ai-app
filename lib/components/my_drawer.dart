@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/constants/my_icons.dart';
-import 'package:study_hack_ai/screens/privacy_policy_screen.dart';
-import 'package:study_hack_ai/screens/tnc_screen.dart';
+import 'package:study_hack_ai/navigation/app_routes.dart';
 import 'package:study_hack_ai/utils/english_text.dart';
 import 'package:study_hack_ai/widgets/buttons/transparent_button.dart';
 
@@ -63,13 +62,7 @@ class MyDrawer extends StatelessWidget {
                     const Divider(),
                     _getTransparentButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const TermsAndConditionsScreen();
-                            },
-                          ),
-                        );
+                        Navigator.of(context).pushNamed(AppRoutes.tncScreen);
                       },
                       icon: MyIcons.termsConditions,
                       text: EnglishText.termsAndConditions,
@@ -77,13 +70,8 @@ class MyDrawer extends StatelessWidget {
                     const Divider(),
                     _getTransparentButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const PrivacyPolicyScreen();
-                            },
-                          ),
-                        );
+                        Navigator.of(context)
+                            .pushNamed(AppRoutes.privacyPolicyScreen);
                       },
                       icon: MyIcons.privacyPolicy,
                       text: EnglishText.privacyPolicy2,

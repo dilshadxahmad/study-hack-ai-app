@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/components/faded_container.dart';
 import 'package:study_hack_ai/components/page_indicator.dart';
 import 'package:study_hack_ai/constants/my_images.dart';
-import 'package:study_hack_ai/screens/main_screen.dart';
+import 'package:study_hack_ai/navigation/app_routes.dart';
 import 'package:study_hack_ai/utils/english_text.dart';
 import 'package:study_hack_ai/view_models/onboarding_screen_vm.dart';
 import 'package:study_hack_ai/widgets/buttons/primary_button.dart';
@@ -137,13 +137,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   );
                                 });
                               } else {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const MainScreen();
-                                    },
-                                  ),
-                                );
+                                Navigator.of(context)
+                                    .pushNamed(AppRoutes.mainScreen);
                               }
                             },
                             child: const Text(EnglishText.next),
@@ -151,13 +146,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           SizedBox(height: 12.h),
                           SecondaryButton(
                             onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const MainScreen();
-                                  },
-                                ),
-                              );
+                              Navigator.of(context)
+                                  .pushNamed(AppRoutes.mainScreen);
                             },
                             child: const Text(EnglishText.skip),
                           ),

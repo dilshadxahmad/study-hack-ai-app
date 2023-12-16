@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="study_hack_ai"
+        android:label="StudyHack AI"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

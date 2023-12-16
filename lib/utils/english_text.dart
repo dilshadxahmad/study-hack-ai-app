@@ -17,7 +17,7 @@ class EnglishText {
       "Get solution of any problems related to any thing!";
   static const String next = "Next";
   static const String skip = "Skip";
-  static const String createEssay = "CREATE  ESSAY";
+  static const String createEssay = "CREATE ESSAY";
   static const String createInnovativeAndCreativeEssay =
       "Create innovative and creative essay with smart AI.";
   static const String composeOrReWrite = "COMPOSE OR RE-WRITE TEXT";
@@ -42,6 +42,8 @@ class EnglishText {
   static const String privacyPolicy2 = "Privacy Policy";
   static const String appVersion100 = "V 1.0.0";
   static const String chatWithMe = "Chat With Me";
+  static const String typeHere = "Type here";
+  static const String copied = "Copied";
 
   static const String longLoremIpsumText =
       """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod bibendum efficitur. Nunc

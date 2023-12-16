@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/config/theme_config.dart';
+import 'package:study_hack_ai/navigation/app_routes.dart';
+import 'package:study_hack_ai/navigation/my_router.dart';
 import 'package:study_hack_ai/screens/splash_screen.dart';
 
 class StudyHackAiApp extends StatelessWidget {
@@ -15,6 +17,8 @@ class StudyHackAiApp extends StatelessWidget {
           theme: ThemeConfig.lightTheme(),
           debugShowCheckedModeBanner: false,
           home: const SplashScreen(),
+          initialRoute: AppRoutes.splashScreen,
+          onGenerateRoute: MyRouter.generateRoute,
         );
       },
     );

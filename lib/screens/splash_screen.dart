@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/constants/my_images.dart';
-import 'package:study_hack_ai/screens/onboarding_screen.dart';
+import 'package:study_hack_ai/navigation/app_routes.dart';
 import 'package:study_hack_ai/utils/english_text.dart';
 import 'package:study_hack_ai/widgets/buttons/primary_button.dart';
 
@@ -46,13 +46,8 @@ class SplashScreen extends StatelessWidget {
               ),
               PrimaryButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const OnboardingScreen();
-                      },
-                    ),
-                  );
+                  Navigator.of(context)
+                      .pushReplacementNamed(AppRoutes.onboardingScreen);
                 },
                 child: const Text(EnglishText.letsGetStarted),
               ),
@@ -69,7 +64,10 @@ class SplashScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(AppRoutes.privacyPolicyScreen);
+                      },
                       child: Text(
                         EnglishText.privacyPolicy,
                         textAlign: TextAlign.center,

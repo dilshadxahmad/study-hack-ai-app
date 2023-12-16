@@ -152,13 +152,16 @@ class ThemeConfig {
       snackBarTheme: SnackBarThemeData(
         backgroundColor: MyColors.black.withOpacity(0.3),
         contentTextStyle: const TextStyle(color: MyColors.white),
+        behavior: SnackBarBehavior.floating,
+        width: 176.w,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
+        contentPadding: EdgeInsets.symmetric(horizontal: 24.w),
         filled: true,
-        fillColor: MyColors.lightGrey.withOpacity(0.5),
+        fillColor: MyColors.lightGrey.withOpacity(0.25),
         labelStyle: TextStyle(
           fontWeight: FontWeight.normal,
           fontSize: 14.sp,

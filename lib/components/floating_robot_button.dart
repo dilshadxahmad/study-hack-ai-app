@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/constants/my_icons.dart';
-import 'package:study_hack_ai/screens/chat_screen.dart';
+import 'package:study_hack_ai/screens/chat_1977_screen.dart';
 
 class FloatingRobotButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -21,7 +21,7 @@ class FloatingRobotButton extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const ChatScreen();
+                    return const Chat1977Screen();
                   },
                 ),
               );

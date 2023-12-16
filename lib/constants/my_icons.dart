@@ -12,6 +12,10 @@ class MyIcons {
   static const String termsConditions = "assets/icons/terms_conditions.png";
   static const String privacyPolicy = "assets/icons/privacy_policy.png";
   static const String appIcon = "assets/icons/app_icon.png";
+  static const String send = "assets/icons/send.png";
+  static const String robot = "assets/icons/robot.png";
+  static const String copy = "assets/icons/copy.png";
+  static const String tick = "assets/icons/tick.png";
 
   // SVG
   static const String svgEssay = "assets/svg/essay.svg";
