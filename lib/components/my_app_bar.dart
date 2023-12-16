@@ -7,7 +7,12 @@ import 'package:study_hack_ai/utils/english_text.dart';
 class MyAppBar extends AppBar {
   final bool hasDrawer;
   final bool hasActions;
-  MyAppBar({this.hasDrawer = false, this.hasActions = false, super.key})
+  final String? titleText;
+  MyAppBar(
+      {this.hasDrawer = false,
+      this.hasActions = false,
+      this.titleText,
+      super.key})
       : super(
           leading: Padding(
             padding: EdgeInsets.only(left: 24.h, top: 24.h, bottom: 24.h),
@@ -33,8 +38,8 @@ class MyAppBar extends AppBar {
               },
             ),
           ),
-          title: const Text(
-            EnglishText.appName,
+          title: Text(
+            titleText ?? EnglishText.appName,
           ),
           actions: [
             if (hasActions)

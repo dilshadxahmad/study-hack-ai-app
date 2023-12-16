@@ -157,28 +157,35 @@ class ThemeConfig {
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: MyColors.lightGrey.withOpacity(0.5),
+        labelStyle: TextStyle(
+          fontWeight: FontWeight.normal,
+          fontSize: 14.sp,
+          color: MyColors.lightGrey,
+        ),
         disabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: MyColors.grey,
+            color: Colors.transparent,
           ),
           borderRadius: BorderRadius.all(
-            Radius.circular(10.r),
+            Radius.circular(30.r),
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: MyColors.lightGrey,
+            color: Colors.transparent,
           ),
           borderRadius: BorderRadius.all(
-            Radius.circular(10.r),
+            Radius.circular(30.r),
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: MyColors.grey,
+            color: Colors.transparent,
           ),
           borderRadius: BorderRadius.all(
-            Radius.circular(10.r),
+            Radius.circular(30.r),
           ),
         ),
         errorBorder: OutlineInputBorder(

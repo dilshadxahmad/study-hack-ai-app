@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_hack_ai/constants/my_icons.dart';
+import 'package:study_hack_ai/screens/privacy_policy_screen.dart';
+import 'package:study_hack_ai/screens/tnc_screen.dart';
 import 'package:study_hack_ai/utils/english_text.dart';
 import 'package:study_hack_ai/widgets/buttons/transparent_button.dart';
 
@@ -42,26 +44,47 @@ class MyDrawer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _getTransparentButton(
+                      onPressed: () {},
                       icon: MyIcons.contactUs,
                       text: EnglishText.contactUs,
                     ),
                     const Divider(),
                     _getTransparentButton(
+                      onPressed: () {},
                       icon: MyIcons.rateUs,
                       text: EnglishText.rateUs,
                     ),
                     const Divider(),
                     _getTransparentButton(
+                      onPressed: () {},
                       icon: MyIcons.restorePurchases,
                       text: EnglishText.restorePurchases,
                     ),
                     const Divider(),
                     _getTransparentButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const TermsAndConditionsScreen();
+                            },
+                          ),
+                        );
+                      },
                       icon: MyIcons.termsConditions,
                       text: EnglishText.termsAndConditions,
                     ),
                     const Divider(),
                     _getTransparentButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const PrivacyPolicyScreen();
+                            },
+                          ),
+                        );
+                      },
                       icon: MyIcons.privacyPolicy,
                       text: EnglishText.privacyPolicy2,
                     ),
@@ -96,9 +119,10 @@ class MyDrawer extends StatelessWidget {
   TransparentButton _getTransparentButton({
     required String icon,
     required String text,
+    required VoidCallback onPressed,
   }) {
     return TransparentButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Row(
         children: [
           Image.asset(icon),
