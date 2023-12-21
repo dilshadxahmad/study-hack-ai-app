@@ -44,6 +44,10 @@ class EnglishText {
   static const String chatWithMe = "Chat With Me";
   static const String typeHere = "Type here";
   static const String copied = "Copied";
+  static const String hiLetMeKnowWhatCan =
+      "Hi, let me know what can i help you with";
+  static const String tapToChat = "tap to chat!";
+  static const String continueText = "Continue";
 
   static const String longLoremIpsumText =
       """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod bibendum efficitur. Nunc

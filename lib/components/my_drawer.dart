@@ -81,21 +81,19 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
               Expanded(
-                  child: SizedBox(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      MyIcons.appIcon,
-                      height: 50.sp,
-                    ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      EnglishText.appVersion100,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    )
-                  ],
-                ),
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    MyIcons.appIcon,
+                    height: 50.sp,
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    EnglishText.appVersion100,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  )
+                ],
               ))
             ],
           ),

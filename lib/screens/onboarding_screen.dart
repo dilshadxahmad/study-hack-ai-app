@@ -39,6 +39,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   ];
   final _pageController = PageController();
   var _selectedIndex = 0;
+  var _nextButtonText = EnglishText.next;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,13 +136,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     duration: const Duration(milliseconds: 300),
                                     curve: Curves.ease,
                                   );
+                                  _nextButtonText = EnglishText.next;
+                                  if (_selectedIndex == 1) {
+                                    _nextButtonText = EnglishText.continueText;
+                                  }
                                 });
                               } else {
                                 Navigator.of(context)
                                     .pushNamed(AppRoutes.mainScreen);
                               }
                             },
-                            child: const Text(EnglishText.next),
+                            child: Text(_nextButtonText),
                           ),
                           SizedBox(height: 12.h),
                           SecondaryButton(

@@ -55,7 +55,7 @@ class TypePage extends StatelessWidget {
                       padding: EdgeInsets.all(16.h),
                       decoration: BoxDecoration(
                         color: MyColors.white.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(60.r),
+                        shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset(_main7CardList[index].icon),
                     ),

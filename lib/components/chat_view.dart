@@ -62,8 +62,9 @@ class _ChatViewState extends State<ChatView> {
                         ),
                       MessageBubble(
                         color: widget.primaryColor,
-                        isSentBubble: widget.messageList[index].senderId ==
-                            currentUser.id,
+                        isBottomRightCornerSharp:
+                            widget.messageList[index].senderId ==
+                                currentUser.id,
                         messageText: widget.messageList[index].messageText,
                       ),
                       if (index == (widget.messageList.length - 1))

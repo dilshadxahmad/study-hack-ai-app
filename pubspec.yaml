@@ -51,6 +51,10 @@ flutter:
 flutter_native_splash:
   android: true
   ios: true
-
-  image: "assets/icons/splash_icon.png"
+  fullscreen: true
+  image: assets/icons/splash_icon_masked.png
   color: "#FFFFFF"
+  android_gravity: fill
+  android_12:
+    image: assets/icons/splash_icon_masked.png
+    icon_background_color: "#FFFFFF"

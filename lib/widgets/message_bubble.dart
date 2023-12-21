@@ -4,12 +4,16 @@ import 'package:study_hack_ai/constants/my_colors.dart';
 
 class MessageBubble extends StatelessWidget {
   final Color? color;
-  final bool isSentBubble;
+  final bool isBottomRightCornerSharp;
   final String messageText;
+  final double? width;
+  final TextStyle? fontStyle;
   const MessageBubble({
     this.color,
-    required this.isSentBubble,
+    this.isBottomRightCornerSharp = true,
     required this.messageText,
+    this.width,
+    this.fontStyle,
     super.key,
   });
 
@@ -17,25 +21,34 @@ class MessageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(maxWidth: 317.w),
-      margin: isSentBubble ? EdgeInsets.zero : EdgeInsets.only(left: 50.w),
+      margin: isBottomRightCornerSharp
+          ? EdgeInsets.zero
+          : EdgeInsets.only(left: 50.w),
       padding: EdgeInsets.symmetric(
         horizontal: 16.w,
         vertical: 10.h,
       ),
+      width: width,
       decoration: BoxDecoration(
-        color: isSentBubble ? color ?? MyColors.milky : MyColors.milky,
+        color:
+            isBottomRightCornerSharp ? color ?? MyColors.milky : MyColors.milky,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20.r),
           topRight: Radius.circular(20.r),
-          topLeft: isSentBubble ? Radius.circular(20.r) : Radius.zero,
-          bottomRight: isSentBubble ? Radius.zero : Radius.circular(20.r),
+          topLeft:
+              isBottomRightCornerSharp ? Radius.circular(20.r) : Radius.zero,
+          bottomRight:
+              isBottomRightCornerSharp ? Radius.zero : Radius.circular(20.r),
         ),
       ),
       child: Text(
         messageText,
-        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: isSentBubble ? MyColors.white : MyColors.black,
-            ),
+        style: fontStyle ??
+            Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: isBottomRightCornerSharp
+                      ? MyColors.white
+                      : MyColors.black,
+                ),
       ),
     );
   }

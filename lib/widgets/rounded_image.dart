@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RoundedImage extends StatelessWidget {
   final String imageName;
@@ -16,14 +15,11 @@ class RoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
-      child: Container(
-        color: backgroundColor,
-        child: Image.asset(
-          imageName,
-          height: height,
-        ),
+    return CircleAvatar(
+      backgroundColor: backgroundColor,
+      child: Image.asset(
+        imageName,
+        height: height,
       ),
     );
   }
