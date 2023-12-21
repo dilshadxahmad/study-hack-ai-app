@@ -15,54 +15,55 @@ class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.splashScreen:
-        return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
-        );
+        return routeScreen(child: const SplashScreen());
+
       case AppRoutes.onboardingScreen:
-        return MaterialPageRoute(
-          builder: (context) => const OnboardingScreen(),
-        );
+        return routeScreen(child: const OnboardingScreen());
+
       case AppRoutes.mainScreen:
-        return MaterialPageRoute(
-          builder: (context) => const MainScreen(),
-        );
+        return routeScreen(child: const MainScreen());
+
       case AppRoutes.tncScreen:
-        return MaterialPageRoute(
-          builder: (context) => const TermsAndConditionsScreen(),
-        );
+        return routeScreen(child: const TermsAndConditionsScreen());
+
       case AppRoutes.privacyPolicyScreen:
-        return MaterialPageRoute(
-          builder: (context) => const PrivacyPolicyScreen(),
-        );
+        return routeScreen(child: const PrivacyPolicyScreen());
+
       case AppRoutes.chat1977Screen:
-        return MaterialPageRoute(
-          builder: (context) => const Chat1977Screen(),
-        );
+        return routeScreen(child: const Chat1977Screen());
+
       case AppRoutes.chat1978Screen:
-        return MaterialPageRoute(
-          builder: (context) => const Chat1978Screen(),
-        );
+        return routeScreen(child: const Chat1978Screen());
+
       case AppRoutes.chat1979Screen:
-        return MaterialPageRoute(
-          builder: (context) => const Chat1979Screen(),
-        );
+        return routeScreen(child: const Chat1979Screen());
+
       case AppRoutes.chat1980Screen:
-        return MaterialPageRoute(
-          builder: (context) => const Chat1980Screen(),
-        );
+        return routeScreen(child: const Chat1980Screen());
+
       case AppRoutes.chat1981Screen:
-        return MaterialPageRoute(
-          builder: (context) => const Chat1981Screen(),
-        );
+        return routeScreen(child: const Chat1981Screen());
 
       default:
-        return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: Center(
-              child: Text("No route defined for ${settings.name}"),
-            ),
-          ),
-        );
+        return _errorRoute(settings);
     }
+  }
+
+  static Route<dynamic> _errorRoute(RouteSettings settings) {
+    return MaterialPageRoute(builder: (_) {
+      return Text("No route defined for ${settings.name}");
+    });
+  }
+
+  static Route<dynamic> routeScreen(
+      {required Widget child, bool fullscreenDialog = false}) {
+    return MaterialPageRoute(
+      builder: (context) => SafeArea(
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: child,
+        ),
+      ),
+    );
   }
 }
