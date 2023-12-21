@@ -75,55 +75,69 @@ class _MainScreenState extends State<MainScreen>
           ? const ScanPage()
           : TypePage(main7CardList: _main7CardList),
       bottomNavigationBar: Container(
-        margin:
-            EdgeInsets.only(left: 24.w, right: 24.w, bottom: 20.w, top: 20.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
-          color: MyColors.lightGrey,
+          border: Border(
+            top: BorderSide(
+              color: MyColors.lightGrey,
+              width: 1.h,
+            ),
+          ),
         ),
-        child: TabBar(
-          // padding:
-          //     EdgeInsets.only(left: 24.w, right: 24.w, bottom: 20.w, top: 20.w),
-          controller: _tabController,
-          onTap: (index) {
-            setState(() {
-              _selectedTabIndex = index;
-            });
-          },
-          tabs: [
-            Tab(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SvgPicture.asset(
-                    MyIcons.scan,
-                    colorFilter: ColorFilter.mode(
-                      _selectedTabIndex == 0 ? MyColors.white : MyColors.black,
-                      BlendMode.srcIn,
+        padding:
+            EdgeInsets.only(left: 24.w, right: 24.w, bottom: 20.w, top: 20.w),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.r),
+            color: MyColors.lightGrey,
+          ),
+          child: TabBar(
+            // padding:
+            //     EdgeInsets.only(left: 24.w, right: 24.w, bottom: 20.w, top: 20.w),
+            controller: _tabController,
+            onTap: (index) {
+              setState(() {
+                _selectedTabIndex = index;
+              });
+            },
+            tabs: [
+              Tab(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      MyIcons.scan,
+                      colorFilter: ColorFilter.mode(
+                        _selectedTabIndex == 0
+                            ? MyColors.white
+                            : MyColors.black,
+                        BlendMode.srcIn,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 8.w),
-                  const Text(EnglishText.scan),
-                ],
+                    SizedBox(width: 8.w),
+                    const Text(EnglishText.scan),
+                  ],
+                ),
               ),
-            ),
-            Tab(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SvgPicture.asset(
-                    MyIcons.keyboard,
-                    colorFilter: ColorFilter.mode(
-                      _selectedTabIndex == 1 ? MyColors.white : MyColors.black,
-                      BlendMode.srcIn,
+              Tab(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      MyIcons.keyboard,
+                      colorFilter: ColorFilter.mode(
+                        _selectedTabIndex == 1
+                            ? MyColors.white
+                            : MyColors.black,
+                        BlendMode.srcIn,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 8.w),
-                  const Text(EnglishText.type),
-                ],
+                    SizedBox(width: 8.w),
+                    const Text(EnglishText.type),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

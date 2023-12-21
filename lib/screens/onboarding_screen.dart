@@ -69,6 +69,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPageChanged: (index) {
                         setState(() {
                           _selectedIndex = index;
+                          index == 2
+                              ? _nextButtonText = EnglishText.continueText
+                              : _nextButtonText = EnglishText.next;
                         });
                       },
                       itemCount: _onboardingScreenVMlist.length,
@@ -136,10 +139,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     duration: const Duration(milliseconds: 300),
                                     curve: Curves.ease,
                                   );
-                                  _nextButtonText = EnglishText.next;
-                                  if (_selectedIndex == 1) {
-                                    _nextButtonText = EnglishText.continueText;
-                                  }
                                 });
                               } else {
                                 Navigator.of(context)

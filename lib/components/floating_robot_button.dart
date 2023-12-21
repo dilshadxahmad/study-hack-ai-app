@@ -15,50 +15,48 @@ class FloatingRobotButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 160.h,
-      width: 300.h,
-      child: RawMaterialButton(
-        onPressed: onPressed ??
-            () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const Chat1977Screen();
-                  },
-                ),
-              );
-            },
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                MessageBubble(
-                  width: 177.w,
-                  messageText: EnglishText.hiLetMeKnowWhatCan,
-                  color: MyColors.lightGrey,
-                  fontStyle: Theme.of(context).textTheme.headlineSmall,
-                ),
-                Text(
-                  EnglishText.tapToChat,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(color: MyColors.primaryBlue),
-                )
-              ],
-            ),
-            Image.asset(
-              MyIcons.chatBot,
-              height: 120.h,
-            ),
-          ],
-        ),
+    return RawMaterialButton(
+      onPressed: onPressed ??
+          () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return const Chat1977Screen();
+                },
+              ),
+            );
+          },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              MessageBubble(
+                width: 177.w,
+                borderRadius: 40.r,
+                messageText: EnglishText.hiLetMeKnowWhatCan,
+                color: MyColors.lightGrey,
+                fontStyle: Theme.of(context).textTheme.headlineSmall,
+              ),
+              Text(
+                EnglishText.tapToChat,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(color: MyColors.primaryBlue),
+              )
+            ],
+          ),
+          Image.asset(
+            MyIcons.chatBot,
+            height: 120.h,
+          ),
+        ],
       ),
     );
   }

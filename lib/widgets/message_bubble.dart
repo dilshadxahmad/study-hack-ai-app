@@ -8,12 +8,14 @@ class MessageBubble extends StatelessWidget {
   final String messageText;
   final double? width;
   final TextStyle? fontStyle;
+  final double? borderRadius;
   const MessageBubble({
     this.color,
     this.isBottomRightCornerSharp = true,
     required this.messageText,
     this.width,
     this.fontStyle,
+    this.borderRadius,
     super.key,
   });
 
@@ -33,12 +35,14 @@ class MessageBubble extends StatelessWidget {
         color:
             isBottomRightCornerSharp ? color ?? MyColors.milky : MyColors.milky,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20.r),
-          topRight: Radius.circular(20.r),
-          topLeft:
-              isBottomRightCornerSharp ? Radius.circular(20.r) : Radius.zero,
-          bottomRight:
-              isBottomRightCornerSharp ? Radius.zero : Radius.circular(20.r),
+          bottomLeft: Radius.circular(borderRadius ?? 20.r),
+          topRight: Radius.circular(borderRadius ?? 20.r),
+          topLeft: isBottomRightCornerSharp
+              ? Radius.circular(borderRadius ?? 20.r)
+              : Radius.zero,
+          bottomRight: isBottomRightCornerSharp
+              ? Radius.zero
+              : Radius.circular(borderRadius ?? 20.r),
         ),
       ),
       child: Text(
